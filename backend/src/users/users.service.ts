@@ -4,11 +4,14 @@ import { User } from './dto/user.dto';
 @Injectable()
 export class UsersService {
   private readonly mockUsers: User[] = [
-    { id: 1, email: 'test@gmail.com', password: 'test' },
+    { email: 'test@gmail.com', password: 'test' },
   ];
 
-  login(id: number): string {
-    const userExists = this.mockUsers.filter((user) => user.id === id);
+  login(userData: User): string {
+    console.log('userData', userData);
+    const userExists = this.mockUsers.find(
+      (user) => user.email === userData.email,
+    );
     if (userExists) {
       return 'Login successful';
     } else {
