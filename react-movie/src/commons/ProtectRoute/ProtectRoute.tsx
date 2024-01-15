@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useUser } from '../../utils/hooks';
 
@@ -7,7 +6,7 @@ type PropsT = {
   children: JSX.Element;
 };
 
-export default ({ isSecured = false, children }: PropsT) => {
+export default ({ isSecured = true, children }: PropsT) => {
   const { isAuthorized } = useUser();
 
   if (isSecured && !isAuthorized) return <Navigate to='/sign-in' />;

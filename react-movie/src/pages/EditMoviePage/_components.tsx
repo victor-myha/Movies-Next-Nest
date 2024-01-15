@@ -1,10 +1,17 @@
 import { styled } from '@mui/material';
 import { colors } from '../../assets/theme';
 
+export const EditWrapper = styled('div')(() => ({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+}));
+
 export const Content = styled('div')(() => ({
   display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
+  flexDirection: 'column',
+  width: '30%',
   margin: '4vh 4vw',
   gap: '4vw',
 }));
@@ -15,7 +22,7 @@ export const UploadButton = styled('button')(() => ({
   justifyContent: 'center',
   flexDirection: 'column',
   background: colors.input,
-  width: '30%',
+  width: '40%',
   aspectRatio: '1',
   cursor: 'pointer',
   borderRadius: '10px',

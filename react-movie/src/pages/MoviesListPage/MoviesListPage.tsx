@@ -4,7 +4,7 @@ import { CircularProgress, IconButton } from '@mui/material';
 import { moviesApi } from '../../api';
 import { IconAddCircle, IconLogout } from '../../assets/icons';
 import { Header } from '../../commons';
-import { Content, TextWithButton } from './_components';
+import { Content, MovieCard, MovieImg, MovieTitle, MovieYear, TextWithButton } from './_components';
 
 const MoviesListPage: FC = () => {
   const [movies, setMovies] = useState<MovieType[]>([]);
@@ -44,7 +44,11 @@ const MoviesListPage: FC = () => {
       </Header>
       <Content>
         {movies.map(movie => (
-          <div key={movie.id}>{movie.title}</div>
+          <MovieCard key={movie.id} onClick={() => navigate('/edit-movie')}>
+            <MovieImg width={'100%'} height={'100%'} src={movie.img} alt='Movie' />
+            <MovieTitle>{movie.title}</MovieTitle>
+            <MovieYear>{movie.year}</MovieYear>
+          </MovieCard>
         ))}
       </Content>
     </>

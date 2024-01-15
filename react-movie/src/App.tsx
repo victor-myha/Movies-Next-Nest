@@ -22,6 +22,7 @@ const App = () => {
         <Routes>
           <Route path={'/'} element={<ProtectRoute isSecured children={<MoviesListPage />} />} />
           <Route path={'/new-movie'} element={<ProtectRoute isSecured children={<EditMoviePage isNew />} />} />
+          <Route path={'/edit-movie'} element={<ProtectRoute isSecured children={<EditMoviePage isNew={false} />} />} />
           <Route path={'/sign-in'} element={<ProtectRoute children={<AuthPage />} />} />
           <Route path={'/sign-up'} element={<ProtectRoute children={<AuthPage isRegistration />} />} />
           <Route path='*' element={<Navigate to={'/'} replace />} />

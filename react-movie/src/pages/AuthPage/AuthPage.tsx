@@ -26,7 +26,7 @@ const AuthPage: FC<PropsType> = ({ isRegistration = false }) => {
   const onAuth = async (email: string, password: string) => {
     setIsLoading(true);
     try {
-      const user: UserType = isRegistration
+      let user: UserType = isRegistration
         ? await userApi.signUp({ password, email })
         : await userApi.signIn({ password, email });
 
@@ -35,6 +35,7 @@ const AuthPage: FC<PropsType> = ({ isRegistration = false }) => {
       }
 
       dispatch(auth(user));
+      navigate('/');
     } catch (err: any) {
       setError(err.message);
     }

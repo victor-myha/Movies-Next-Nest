@@ -4,7 +4,7 @@ type UserType = {
 };
 
 type MovieType = {
-  id: number;
+  id?: number;
   img: string | undefined;
   title: string;
   year: number;

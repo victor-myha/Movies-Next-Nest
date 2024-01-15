@@ -18,11 +18,11 @@ export const APP_VALIDATION = {
   required: Yup.string().required('Required field'),
   email: Yup.string().email().required('Required field'),
   password: Yup.string()
-    .min(8, 'Must be minimum ${min} characters')
-    .matches(/[0-9]/, 'Password requires a number')
-    .matches(/[a-z]/, 'Password requires a lowercase letter')
-    .matches(/[A-Z]/, 'Password requires an uppercase letter')
-    .matches(/[^\w]/, 'Password requires a symbol')
+    // .min(8, 'Must be minimum ${min} characters')
+    // .matches(/[0-9]/, 'Password requires a number')
+    // .matches(/[a-z]/, 'Password requires a lowercase letter')
+    // .matches(/[A-Z]/, 'Password requires an uppercase letter')
+    // .matches(/[^\w]/, 'Password requires a symbol')
     .required('Required field'),
   confirmPassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Passwords must match')
